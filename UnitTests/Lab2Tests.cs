@@ -23,7 +23,6 @@ namespace UnitTests
         [TestMethod]
         public void Parentheses3()
         {
-
             Assert.IsFalse(Lab2.Program.IsBalanced("{ [ ] ) ) ( ( "));
         }
 

@@ -27,7 +27,7 @@ namespace Lab2
                 {
                     stack.Push(c);
                 }
-                else if (c == '}' || c == '>' || c == ']' || c == ')')
+                if (c == '}' || c == '>' || c == ']' || c == ')')
                 {
                     try
                     {
@@ -41,28 +41,22 @@ namespace Lab2
                         return false;
                     }
                 }
-                else
-                {
-                }
             }
 
-            if( stack.Count == 0)
-            {
-                return true;
-            }
-            return false;
+            return stack.Count == 0;
         }
 
         private static bool Matches(char open, char close)
         {
             if (open == '{')
                 return '}' == close;
-            else if (open == '<')
+            if (open == '<')
                 return '>' == close;
-            else if (open == '(')
+            if (open == '(')
                 return ')' == close;
-            else
-                return '[' == close;
+            if (open == '[')
+                return ']' == close;
+            return false;
         }
 
         // Evaluate("5 3 11 + -")	// returns -9
